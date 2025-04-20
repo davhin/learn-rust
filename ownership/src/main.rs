@@ -23,12 +23,42 @@
 //     println!("{some_integer}");
 // } // Here, some_integer goes out of scope. Nothing special happens.
 
-fn main() {
-    let s = String::from("hello");
+// fn main() {
+//     let s = String::from("hello");
 
-    change(&s);
+//     change(&s);
+// }
+
+// fn change(some_string: &String) {
+//     some_string.push_str(", world");
+// }
+
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
 }
 
-fn change(some_string: &String) {
-    some_string.push_str(", world");
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username,
+        email,
+        sign_in_count: 1,
+    }
+}
+
+fn main() {
+    let username = String::from("someusername123");
+    let email = String::from("someone@example.com");
+    let mut user1 = build_user(email, username);
+    user1.email = String::from("anotheremail@example.com");
+
+    let user2 = User {
+        active: user1.active,
+        username: user1.username,
+        email: String::from("another@example.com"),
+        sign_in_count: user1.sign_in_count,
+    };
 }
