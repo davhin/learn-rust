@@ -17,7 +17,13 @@ fn main() {
         get_mode(&v_odd)
     );
 }
+// task 2: converting a string to pig latin
 
+// task 3: with a hash map and vectors, create a text interface to allow a user to add emplooyee names to a department
+// e.g. "Add David to engineering", then let user retrieve a list of all people in a department or all people in company
+// by department, sorted alphabetically
+
+// task 1: median and mode of a vector
 fn get_median(v: &Vec<i32>) -> f32 {
     let l: usize = v.len();
     let median: f32 = if l % 2 == 0 {
