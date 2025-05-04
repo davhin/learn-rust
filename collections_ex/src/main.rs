@@ -1,6 +1,8 @@
 use std::collections::HashMap;
+use std::io;
 
 fn main() {
+    // task 1: median and mode of a vector
     println!("Hello, world!");
     println!("Task 1: take a list of integers in a vector, and return the median and the mode");
     // let v: Vec<i32> = Vec::new();
@@ -16,12 +18,24 @@ fn main() {
         get_median(&v_odd),
         get_mode(&v_odd)
     );
+    // task 2: converting a string to pig latin
+    println!("Task 2: Convert a string to pig latin");
+    println!("Enter a string: ");
+    // do calculation
+    let mut s = String::new();
+    io::stdin().read_line(&mut s).expect("Failed to read line");
+    let pig_string: String = convert_to_pl(s);
+    println!("The pig latin version is {pig_string}");
 }
-// task 2: converting a string to pig latin
 
 // task 3: with a hash map and vectors, create a text interface to allow a user to add emplooyee names to a department
 // e.g. "Add David to engineering", then let user retrieve a list of all people in a department or all people in company
 // by department, sorted alphabetically
+
+// task 2: convert to pig latin
+fn convert_to_pl(_s: String) -> String {
+    "test".to_string()
+}
 
 // task 1: median and mode of a vector
 fn get_median(v: &Vec<i32>) -> f32 {
