@@ -24,7 +24,7 @@ fn main() {
     // do calculation
     let mut s = String::new();
     io::stdin().read_line(&mut s).expect("Failed to read line");
-    let pig_string: String = convert_to_pl(s);
+    let pig_string: String = convert_to_pl(&s.trim());
     println!("The pig latin version is {pig_string}");
 }
 
@@ -33,12 +33,15 @@ fn main() {
 // by department, sorted alphabetically
 
 // task 2: convert to pig latin
-fn convert_to_pl(_s: String) -> String {
-    "test".to_string()
+fn convert_to_pl(s: &str) -> String {
+    let first: String = s.chars().nth(0).unwrap().to_string();
+    let tail: String = s.chars().skip(1).collect();
+    let result = tail + &first;
+    result
 }
 
 // task 1: median and mode of a vector
-fn get_median(v: &Vec<i32>) -> f32 {
+fn get_median(v: &[i32]) -> f32 {
     let l: usize = v.len();
     let median: f32 = if l % 2 == 0 {
         let lower: &i32 = &v[l / 2 - 1];
