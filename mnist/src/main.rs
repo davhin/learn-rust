@@ -2,7 +2,6 @@ mod model;
 
 use crate::model::ModelConfig;
 use burn::backend::Wgpu;
-
 fn main() {
     type MyBackend = Wgpu<f32, i32>;
 

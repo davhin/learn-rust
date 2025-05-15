@@ -1,0 +1,7 @@
+[package]
+name = "mnist"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+burn = { path = "/Users/david/libs/burn/crates/burn", features = ["train", "wgpu", "vision"] }
