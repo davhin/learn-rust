@@ -1,3 +1,5 @@
+use ch10_generics_traits_lifetimes::{NewsArticle, SocialPost, Summary};
+
 fn largest_i32(numbers: &[i32]) -> &i32 {
     let mut largest = &numbers[0];
     for number in &numbers[1..] {
@@ -41,4 +43,13 @@ fn main() {
     let number_list = vec!['a', 'c', 'd', 'Z'];
     let result = largest(&number_list);
     println!("The largest char is {}", result);
+
+    // now use the traits implemented in the lib
+    let post = SocialPost {
+        username: String::from("bjhorseman"),
+        content: String::from("good lord that's depressing"),
+        reply: true,
+        repost: false,
+    };
+    println!("1 new social post: {}", post.summarize());
 }
